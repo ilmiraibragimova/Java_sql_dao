@@ -32,12 +32,12 @@ INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
 INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
     ('Solopova','Inga','Semenovna', '+79995675555','Pskov',NULL);
 CREATE TABLE podraz (
-                        idTabl SERIAL PRIMARY KEY,
-                        numPodraz INTEGER,
-                        namePodraz VARCHAR(15),
-                        numOtdel INTEGER,
-                        nameOtdel VARCHAR(15),
-                        idEmp INTEGER references mytest(id) on delete cascade
+    idTabl SERIAL PRIMARY KEY,
+    numPodraz INTEGER,
+    namePodraz VARCHAR(15),
+    numOtdel INTEGER,
+    nameOtdel VARCHAR(15),
+    idEmp INTEGER references mytest(id) on delete cascade
 );
 INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
     (1,'prodact',1, 'otdel1',1);
