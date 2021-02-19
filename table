@@ -1,0 +1,68 @@
+CREATE TABLE mytest (
+    id SERIAL PRIMARY KEY,
+    family VARCHAR(20),
+    name VARCHAR(10),
+    ochestvo VARCHAR(15),
+    tel VARCHAR (15),
+    adres VARCHAR(50),
+    dopInfo VARCHAR(50)
+);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Ivanov','Ivan','Ivanovich','+79999999991','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Petrov','Petr','Ivanovich', '+7999567565','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Isanov','Isa','Ivanovich',  '+7999999991','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Petrova','Inna','Semenovna','+7999567567','Pskov',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Morozov','Nick','Sergeevich','+7999999657','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Petelin','Petr','Ivanovich', '+7999567000','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Rusov','Aleksey','Ivanovich','+7999999991','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Volkov','Semen','Grigorevich', '+7999567567','Pskov',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Zverev','John','','+7999999999','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Pevenov','Peng','Ivanovich', '+79995675657','Moscow',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Smith','Mick','','+5555555555','New-Orlean',NULL);
+INSERT INTO mytest (family, name, ochestvo, tel, adres, dopinfo) VALUES
+    ('Solopova','Inga','Semenovna', '+79995675555','Pskov',NULL);
+CREATE TABLE podraz (
+                        idTabl SERIAL PRIMARY KEY,
+                        numPodraz INTEGER,
+                        namePodraz VARCHAR(15),
+                        numOtdel INTEGER,
+                        nameOtdel VARCHAR(15),
+                        idEmp INTEGER references mytest(id) on delete cascade
+);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (1,'prodact',1, 'otdel1',1);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (1,'prodact',1, 'otdel1',2);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (1,'prodact',2, 'otdel2',3);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (1,'prodact',2, 'otdel2',4);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',3, 'admin',5);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',3, 'admin',6);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',4, 'hr',7);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',4, 'hr',8);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',5, 'smm',9);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',5, 'smm',10);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (2,'office',4, 'hr',11);
+INSERT INTO podras (numPodraz, namePodraz, numOtdel, nameOtdel, idEmp) VALUES
+    (1,'prodact',2, 'otdel2',12);
+
+
+
